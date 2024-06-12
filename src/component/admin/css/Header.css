@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(15, 15, 107, 0.671);
+    padding: 10px 20px;
+    color: white;
+    /* position: fixed; */
+    width: 100%;
+    /* top: 0; */
+    z-index: 1000;
+    border-radius: 10px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.profile {
+    position: relative;
+}
+
+.profile-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.profile-menu {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1001;
+}
+
+.profile-menu-item {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.profile-menu-item:hover {
+    background-color: rgba(15, 15, 107, 0.671);
+    color: white;
+}

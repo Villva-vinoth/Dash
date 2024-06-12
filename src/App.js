@@ -1,58 +1,29 @@
- import React from "react";
- import * as Components from './Components';
+import React from "react";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import Login from "./component/Login";
+import Admin from "./component/admin/Admin";
+import SignInContainer from "./component/Sign/SignInContainer";
+import { AuthProvider } from "./component/Routers/AuthContext";
+import PageNotFound from "./component/PageNotFound";
+import PrivateRoute from "./component/Routers/PrivateRoute";
 
- function App() {
-     const [signIn, toggle] = React.useState(true);
-      return(
-          <Components.Container>
-              <Components.SignUpContainer signinIn={signIn}>
-                  <Components.Form>
-                      <Components.Title>Create Account</Components.Title>
-                      <Components.Input type='text' placeholder='Name' />
-                      <Components.Input type='email' placeholder='Email' />
-                      <Components.Input type='password' placeholder='Password' />
-                      <Components.Button>Sign Up</Components.Button>
-                  </Components.Form>
-              </Components.SignUpContainer>
+function App() {
+  //  const nav = useNavigate()
+  return (
+    <BrowserRouter >
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path='*' element={<PageNotFound />} />
 
-              <Components.SignInContainer signinIn={signIn}>
-                   <Components.Form>
-                       <Components.Title>Sign in</Components.Title>
-                       <Components.Input type='email' placeholder='Email' />
-                       <Components.Input type='password' placeholder='Password' />
-                       <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                       <Components.Button>Sigin In</Components.Button>
-                   </Components.Form>
-              </Components.SignInContainer>
+          {/* <Route path="/admin/*" element={<Admin />} /> */}
+          <Route path='/admin/*' element={<PrivateRoute allowedRoles="admin">
+            <Admin />
+          </PrivateRoute>} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
+  )
+}
 
-              <Components.OverlayContainer signinIn={signIn}>
-                  <Components.Overlay signinIn={signIn}>
-
-                  <Components.LeftOverlayPanel signinIn={signIn}>
-                      <Components.Title>Welcome Back!</Components.Title>
-                      <Components.Paragraph>
-                          To keep connected with us please login with your personal info
-                      </Components.Paragraph>
-                      <Components.GhostButton onClick={() => toggle(true)}>
-                          Sign In
-                      </Components.GhostButton>
-                      </Components.LeftOverlayPanel>
-
-                      <Components.RightOverlayPanel signinIn={signIn}>
-                        <Components.Title>Hello, Friend!</Components.Title>
-                        <Components.Paragraph>
-                            Enter Your personal details and start journey with us
-                        </Components.Paragraph>
-                            <Components.GhostButton onClick={() => toggle(false)}>
-                                Sigin Up
-                            </Components.GhostButton> 
-                      </Components.RightOverlayPanel>
-  
-                  </Components.Overlay>
-              </Components.OverlayContainer>
-
-          </Components.Container>
-      )
- }
-
- export default App;
+export default App;

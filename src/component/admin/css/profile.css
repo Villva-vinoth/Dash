@@ -1,0 +1,95 @@
+.profile-display{
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 2%;
+}
+.input-cont-logo{
+    position: relative;
+    background-color: red;
+    width: 300px;
+}
+.user-profile{
+    padding: 0 20px;
+}
+
+.user-logo{
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, 50%);
+    z-index: 1;
+}
+
+.input-cont-logo input {
+    width: 300px;
+    padding: 0.75rem;
+    border: none;
+    background-color: #d1d5db;
+    outline: none;
+}
+
+.modal-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+.modal-change-btn{
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-evenly;
+    /* background-color: red; */
+    width: 50%;
+    /* gap: 10px; */
+    padding: 1%;
+
+}
+.modal-change-btn button{
+    padding: 8px;
+    border-style: dotted;
+}
+
+.modal-submit{
+    border: 2px solid green;
+    background-color: white;
+    color: green;
+}
+.modal-cancel{
+    border: 2px solid red;
+    background-color: white;
+    color: red;
+}
+.modal-submit:hover{
+    border: 2px solid white;
+    background-color: green;
+    color: white;
+}
+.modal-cancel:hover{
+    border: 2px solid white;
+    background-color: red;
+    color: white;
+}
+
+.profile-cont2{
+    /* outline: saddlebrown; */
+    /* border: 2px solid red; */
+    /* background-color: red; */
+
+}
+.profile-cont2 h4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    padding: 1%;
+    color: rgb(91,91,153);
+    border: 1px rgb(91,91,153) solid;
+    width: 200px;
+    border-radius: 10px;
+}
+.profile-cont2 h4:hover{
+    color: white;
+    border: 1px black solid;
+    background-color: rgb(91,91,153);
+}

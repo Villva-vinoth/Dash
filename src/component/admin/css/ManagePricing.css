@@ -1,0 +1,75 @@
+.Manage-price-container{
+    width: 98%;
+    margin-inline: auto;
+    background-color: #403c8f;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px black;
+    padding: 2%;
+}
+.Manage-price-container h1{
+    margin-left: 2%;
+}
+.datatable-header, .rdt_TableHeadRow, .rdt_TableCol,  .rdt_TableCol_Sortable {
+    z-index: 11 !important;
+    border-radius: 20px;
+    /* position: relative !important; */
+}
+.rdt_Table{
+    /* z-index: -1 !important; */
+}
+.rdt_TableHead{
+    /* z-index: 1 !important; */
+}
+.model-popup{
+    z-index: 100 !important;
+    position: absolute;
+}
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.delete-btns{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+.yes-btn {
+    padding: 5%;
+}
+.yes-btn button{
+    background-color: green;
+    color: white;
+    padding: 5% 10%;
+    width: 100px;
+}
+
+.no-btn button{
+    background-color: rgb(250, 1, 1);
+    color: white;
+    padding: 5% 10%;
+    width: 100px;
+}
+.yes-btn button:hover , .no-btn button:hover{
+    color: black;
+    background-color: aqua;
+}
+
+.manage-price-lottie{
+    width: 50%;
+    margin-inline: auto;
+}
+
+.manage-pricing-btn{
+    display: flex;
+    gap: 20px;
+}
+.edit-btn{
+    color: green;
+    border: none;
+}
+.delete-btn{
+    color: red;
+}

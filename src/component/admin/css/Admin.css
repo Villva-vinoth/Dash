@@ -1,0 +1,43 @@
+.admin-cont{
+    background-color: rgb(165, 153, 215);
+    /* margin: ; */
+    padding: 0.5rem ;
+}
+.admin-contain{
+    display: flex;
+    flex-direction: column;
+   
+}
+.admin-main-contain{
+    display: flex;
+    padding: 1% 0;
+    
+}
+
+.admin-first-child{
+    flex-basis: 15%;
+}
+
+.admin-second-child{
+    /* background-color: RED; */
+    flex-basis: 80%;
+    display: flex;
+    width: 100%;
+    margin-inline: auto;
+    flex-direction: column;
+    gap: 10px;
+}
+.admin-Router-child{
+    /* padding: 10px; */
+}
+@media (max-width:768px) {
+    .admin-main-contain{
+        gap: 10px;
+    }
+    .admin-first-child{
+        flex-basis: 10%;
+    }
+    .admin-second-child{
+        flex-basis: 85%;
+    }
+}

@@ -1,0 +1,361 @@
+.add-pro{
+
+}
+.admin-products{
+    padding: 2rem 0px;
+    box-sizing: border-box;
+}
+.wrapper-container{
+  
+   width:min(100%,95%);
+   margin-inline: auto;
+}
+.add-cab{
+    padding-bottom:2% !important;
+    
+    /* margin: 1% 0 ; */
+    /* background-color: red; */
+}
+.wrapper-container h2{
+   margin: 0;
+   padding: 0;
+}
+.admin-product-header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: white;
+   padding:1rem;
+   box-shadow: 0px 0px 5px rgb(178, 178, 178);
+   border-radius: 5px;
+}
+.admin-product-header button{
+ background-color: rgb(0, 123, 255);
+ color: white;    
+ border: none;
+ padding: 0.5rem 1rem;
+ border-radius: 4px;
+ cursor: pointer;
+}
+.add-pro{
+   /* padding: 2rem 0px; */
+   box-sizing: border-box;
+   background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px black;
+    padding: 2%;
+}
+.product-form{
+   background-color: rgb(255, 255, 255);
+   padding: 2rem;
+   box-sizing: border-box;
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.product-form img{
+   width: 300px;
+   height: 300px;
+   object-fit: fill;
+   border: 1px solid black;
+}
+.vehicleName{
+    width: 100% !important;
+    padding: 0.75rem;
+}
+.product-form input,.text-area, select{
+    width: 250px;
+}
+.product-form textarea{
+   resize: none;
+}
+.product-form-field{
+   display: flex;
+   gap: 20px;
+   flex-wrap: wrap;
+   
+
+}
+
+.product-form-field > *{
+   flex: 1;
+   display: flex;
+   align-items: center;
+  justify-content: space-between;
+ 
+}
+.product-rows label{
+   font-size: 18px;
+   font-weight: 500;
+ 
+}
+.product-rows input{
+   padding: 0.75rem;
+   box-sizing: border-box;
+   font-size: 15px;
+}
+.product-rows select{
+    padding: 1rem;
+    width: 250px;
+    box-sizing: border-box;
+    font-size: 17px;
+ }
+.add-prod-btn{
+   padding: 1rem 0px;
+   box-sizing: border-box;
+   display: flex;
+   align-items: center;
+   gap: 20px;
+}
+
+.add-prod-btn button{
+   padding: 0.75rem 2rem;
+   border: none;
+   font-size: 16px;
+   font-weight: 500;
+   text-transform: uppercase;
+   color: white;
+   cursor: pointer;
+   border-radius: 4px;
+}
+.add-prod-btn button:first-child{
+   background-color: rgb(39, 141, 231);
+   transition: 0.1s;
+ 
+}
+.add-prod-btn button:last-child{
+   background-color:crimson;
+   transition: 0.1s;
+   
+}
+.add-prod-btn button:last-child:hover{
+
+   transform: scale(1.1);
+}
+.add-prod-btn button:first-child:hover{
+
+   transform: scale(1.1);
+}
+
+.Admin-product-container
+{
+   width: 100%;
+   display: flex;
+   gap:25px;
+   flex-wrap: wrap;
+
+   padding:2rem 0px;
+   box-sizing: border-box;
+}
+
+.Admin-product-container >*{
+   box-shadow: 0px 0px 10px rgb(180, 180, 180);
+   width:calc(33% - 25px); 
+  padding: 1rem;
+   box-sizing: border-box;
+}
+.prod-card{
+   background-color: white;
+}
+
+.prod-image-cont{
+   width: 100%;
+   height: 200px;
+   display: flex;
+
+   justify-content: center;
+}
+.prod-image-cont img{ 
+   max-width: 100%;
+   height: 100%;
+   
+}
+.prod-info h3{
+   text-transform: capitalize;
+   font-weight: 400;
+   text-align: center;
+}
+.admin-options{
+   display: flex;
+   justify-content: end;
+}
+.edit-dots{
+   background-color: rgb(226, 226, 226);
+   width: 25px;
+   border-radius: 50%;
+   display: grid;
+   place-items: center;
+   height:25px;
+   position: relative;
+
+}
+.admin-drop-menu{
+  
+   position: absolute;
+   display: none;
+   flex-direction: column;
+   z-index: 111;
+   padding: 0.5rem 1rem;
+   bottom: 0%;
+   left: 0%;
+   background-color: white;
+   transition: 0.6s;
+  box-shadow: 0px 0px 10px grey;
+  
+}
+.admin-options span:hover  .admin-drop-menu{
+
+      display: flex;
+      gap: 10px;
+
+}
+.admin-drop-menu span{
+   font-size: 16px;
+   border-bottom: 2px solid rgb(215, 215, 215);
+   cursor: pointer;
+   padding: 0.25rem 0px;
+}
+.edit-form{
+   display: flex;
+   gap: 10px;
+}
+.edit-tit{
+   color: grey;
+   font-size: 15px;
+}
+.edit-form >*{
+   flex: 1; 
+}
+.main-field-container{
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+  
+}
+.main-field-container input ,.edit-textarea{
+   width: 90%;
+   padding: 0.75rem;
+   box-sizing: border-box;
+   resize: none;
+   font-size: 18px;
+   border: none;
+   background-color: rgb(231, 231, 231) !important;
+
+}
+.input-field{
+   
+}
+.edit-input-field-row{
+   display: flex;
+   gap: 10px;
+   margin-bottom: 20px;
+}
+.edit-input-field-row >* {
+   flex: 1;
+}
+.edit-input-field-row input,.edit-textarea-blog{
+    padding: 0.75rem;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color:rgb(231, 231, 231) ;
+    border: none;
+}
+
+
+
+.edit-image-cont {
+
+   width: max-content;
+   position: relative;
+}
+.edit-image-cont img{
+
+   border: 2px solid grey;
+   width: 200px;
+   height: 200px;
+   object-fit:scale-down;
+
+}
+.edit-image-cont span{
+   color: crimson;
+   position: absolute;
+   top: 5px;
+   font-size: 30px;
+   right:5px;
+   cursor: pointer;
+}
+
+.edit-btn-cont{
+   padding: 1rem 0px ;
+   box-sizing: border-box;
+
+}
+.edit-btn-cont button{
+   padding: 0.75rem 1rem ;
+   margin-right: 10px;
+   border: none;
+   color: white;
+   text-transform: uppercase;
+   font-weight: 600;
+   cursor: pointer;
+   border-radius: 4px;
+}
+.edit-btn-cont button:first-child{
+   background-color: rgb(0, 145, 255);
+   
+}
+.edit-btn-cont button:last-child{
+   background-color:crimson;
+   
+}
+
+.pagination-container-admin{
+   list-style:none;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   gap:10px;
+   font-size:1.2rem;
+   cursor:pointer
+   
+}
+.pagination-container-admin .page-num{
+   cursor:pointer;
+   border-radius: 5px;
+   padding: 8px 15px;
+   font-weight: 400;
+}
+.page-num:hover{
+   background-color: black;
+   color: white;
+}
+.pagination-container-admin .active{
+   background-color:black;
+   color:white;
+}
+.error-box{
+   color: red;
+}
+
+@media (max-width: 768px) {
+   .Admin-product-container>*{
+       width: 100%;
+   }
+   .product-rows label{
+       font-size: 16px;
+       font-weight: 500;
+   }
+   .edit-form {
+       flex-direction: column;
+   }
+   .main-field-container input ,.edit-textarea
+   {
+       width: 100%;
+   }
+   .admin-drop-menu{
+     
+       left: -200%;
+   }
+}
