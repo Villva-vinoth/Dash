@@ -9,6 +9,10 @@ import ManagePricing from "./ManagePricing";
 import Profile from "./Profile";
 import PageNotFound from "../PageNotFound";
 import AddCab from "./AddCab";
+import AddSubcription from "./AddSubcription";
+import ManageSubcription from "./ManageSubcription";
+import SubcriptionRider from "./SubcriptionRider";
+import SubcriptionDriver from "./SubcriptionDriver";
 const Admin = () => {
   return (
     <div className="admin-cont">
@@ -26,6 +30,11 @@ const Admin = () => {
               <Route path="/pricing/add" element={<AddPricing />} />
               <Route path="/pricing/manage" element={<ManagePricing />} />
               <Route path="/cab/add" element={<AddCab />} />
+              {/* <Route path="/subcription/add" element={<AddSubcription />} /> */}
+              <Route path="/subcription/rider" element={<SubcriptionRider />} />
+              <Route path="/subcription/driver" element={<SubcriptionDriver />} />
+
+              <Route path="/subcription/manage" element={<ManageSubcription />} />
 
               <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<PageNotFound />} />

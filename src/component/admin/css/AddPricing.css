@@ -65,3 +65,40 @@
     border-radius: 10px;
     background-color: rgb(48, 105, 62);
 } */
+
+.btns{
+    display: flex;
+    /* background-color: red; */
+    padding: 1%;
+}
+
+.model-submit-btn button{
+    background-color: green;
+    color: white !important;
+    font-weight: 600;
+
+}
+.model-cancel-btn button{
+    color: white;
+    background-color: red;
+    font-weight: 600;
+    /* padding: 2%; */
+    
+}
+.add-pricing-single-input-container{
+    /* background-color: red; */
+    width: 100%;
+}
+
+.add-pricing-single-input-div{
+    padding: 15px;
+    width: 100%;
+}
+.add-pricing-single-input-div label{
+    font-weight: 600;
+    background-color: red;
+}
+.add-pricing-single-input-div input{
+    width: 100%;
+    padding: 1%;
+}

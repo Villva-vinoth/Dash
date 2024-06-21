@@ -309,7 +309,7 @@ const ManagePricing = () => {
         {refresh == true ? (
           <div>
             {modalIsOpen == false ? (
-              <div style={{ height: "450px", overflowY: "scroll" }}>
+              <div className="data-table-container">
                 <DataTable
                   customStyles={customStyle}
                   columns={columns}
@@ -496,7 +496,7 @@ const ManagePricing = () => {
         contentLabel="Example Modal"
       >
         <h1 style={{ textAlign: "center" }}>Do you want to Delete Pricing ?</h1>
-        <section className="add-pricing-sub-container">
+        <section className="">
           <div className="delete-btns">
             <div className="yes-btn">
               <button onClick={() => handleDelete()}>Yes</button>

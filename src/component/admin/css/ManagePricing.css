@@ -73,3 +73,11 @@
 .delete-btn{
     color: red;
 }
+
+.data-table-container{
+    height: 450px;
+    overflow-y: auto;
+}
+.data-table-container::-webkit-scrollbar{
+    display: none;
+}

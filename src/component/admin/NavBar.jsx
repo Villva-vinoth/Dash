@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import './css/NavBar.css';
 import { useNavigate } from 'react-router-dom';
 import { MdDashboard } from "react-icons/md";
-import { FaUser } from "react-icons/fa";
+import { FaUser, FaCarAlt} from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { IoIosPricetags } from "react-icons/io";
+import { FaCircleDollarToSlot } from "react-icons/fa6";
 
 const NavBar = () => {
   const nav = useNavigate();
@@ -63,13 +64,30 @@ const NavBar = () => {
             className={activeIndex === 3 ? "Admin-navigation-cn" : ""}
           >
             <div className='menu-item'>
-             <div className='menu-select'> <IoIosPricetags />cab</div>
+             <div className='menu-select'> <FaCarAlt />cab</div>
               {subMenuVisible[3] ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </div>
             {subMenuVisible[3] && (
               <ul className='sub-menu'>
                 <li onClick={() => nav('/admin/cab/add')}>Add cab</li>
                 <li onClick={() => nav('/admin/cab/manage')}>Manage cab</li>
+              </ul>
+            )}
+          </li>
+          <li 
+            onClick={() => { toggleSubMenu(4); setActiveIndex(4); }} 
+            className={activeIndex === 4 ? "Admin-navigation-cn" : ""}
+          >
+            <div className='menu-item'>
+             <div className='menu-select'> <FaCircleDollarToSlot />Subcription</div>
+              {subMenuVisible[4] ? <IoIosArrowUp /> : <IoIosArrowDown />}
+            </div>
+            {subMenuVisible[4] && (
+              <ul className='sub-menu'>
+                <li onClick={() => nav('/admin/subcription/driver')}>Driver</li>
+                <li onClick={() => nav('/admin/subcription/rider')}>Rider</li>
+
+                <li onClick={() => nav('/admin/subcription/manage')}>Manage subcription</li>
               </ul>
             )}
           </li>
