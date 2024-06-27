@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(15, 15, 107, 0.671);
+    background-color: #ff416b;
     padding: 10px 20px;
     color: white;
     /* position: fixed; */
@@ -44,6 +44,6 @@
 }
 
 .profile-menu-item:hover {
-    background-color: rgba(15, 15, 107, 0.671);
+    background-color: #ff416b;
     color: white;
 }

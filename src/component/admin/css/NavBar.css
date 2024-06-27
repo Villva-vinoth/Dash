@@ -29,7 +29,7 @@ ul > li:hover{
 
 .side-bar {
     display: flex;
-    background-color: rgba(15, 15, 107, 0.671);
+    background-color: #ff416b;
     flex-direction: column;
     height: 100vh;
     border-radius: 10px;
@@ -88,7 +88,7 @@ ul > li:hover, .Admin-navigation-cn {
 }
 
 .sub-menu > li:hover {
-    background-color: rgb(200, 200, 200);
+    background-color: #ffbbc9;
     border-radius: 10px;
     color: black;
 }

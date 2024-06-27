@@ -83,13 +83,13 @@
     justify-content: center;
     font-weight: 400;
     padding: 1%;
-    color: rgb(91,91,153);
-    border: 1px rgb(91,91,153) solid;
+    color: #ff416b;
+    border: 1px #ff416b solid;
     width: 200px;
     border-radius: 10px;
 }
 .profile-cont2 h4:hover{
     color: white;
     border: 1px black solid;
-    background-color: rgb(91,91,153);
+    background-color: #ff416b;
 }

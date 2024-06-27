@@ -1,10 +1,11 @@
 .Manage-price-container{
     width: 98%;
     margin-inline: auto;
-    background-color: #403c8f;
+    background-color: #ff416b;
     border-radius: 20px;
     box-shadow: 2px 2px 2px black;
     padding: 2%;
+    color: white;
 }
 .Manage-price-container h1{
     margin-left: 2%;

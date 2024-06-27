@@ -238,7 +238,7 @@ const ManagePricing = () => {
       width: "90%",
       zIndex: "9999 !important",
       transform: "translate(-50%, -50%)",
-      background:"#403c8f"
+      background:"#ff416b"
     },
   };
 
@@ -253,7 +253,7 @@ const ManagePricing = () => {
       width: "30%",
       zIndex: "9999 !important",
       transform: "translate(-50%, -50%)",
-          background:"#403c8f"
+          background:"#ff416b"
     },
   };
 

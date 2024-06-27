@@ -5,10 +5,11 @@
     flex-direction: column;
     gap: 10px;
     /* border: 2px solid red; */
-    background-color: #403c8f;
+    background-color: #ff416b;
     border-radius: 20px;
     box-shadow: 2px 2px 2px black;
     padding: 2%;
+    color: white;
 }
 
 .add-pricing-sub-container {
