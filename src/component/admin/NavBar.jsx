@@ -39,7 +39,9 @@ const NavBar = () => {
             {subMenuVisible[1] && (
               <ul className='sub-menu'>
                 <li onClick={() => nav('/admin/users/add')}>Add User</li>
-                <li onClick={() => nav('/admin/users/manage')}>Manage Users</li>
+                <li onClick={() => nav('/admin/users/drivers')}>All Drivers</li>
+                <li onClick={() => nav('/admin/users/riders')}>All Riders</li>
+
               </ul>
             )}
           </li>

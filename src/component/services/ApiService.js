@@ -28,3 +28,10 @@ export const CREATE_SUBCRIPTION = `${BASEURL}/api/web/subscription`
 export const GET_ALL_SUBCRIPTION = `${BASEURL}/api/web/subscription`
 export const EDIT_SUBCRIPTION = `${BASEURL}/api/web/subscription`
 export const DELETE_SUBCRIPTION = `${BASEURL}/api/web/subscription`
+
+
+
+// user
+
+export const GET_ALL_DRIVERS =`${BASEURL}/api/web/getAllDrivers` 
+// http://localhost:8092/api/web/getAllDrivers?phone=9&name=&driverVehicleNumber&driverId&limit=1&page=1

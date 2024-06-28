@@ -82,3 +82,8 @@
 .data-table-container::-webkit-scrollbar{
     display: none;
 }
+
+.manage-driver-phone{
+    display: flex;
+    flex-direction: column;
+}

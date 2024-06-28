@@ -13,6 +13,7 @@ import AddSubcription from "./AddSubcription";
 import ManageSubcription from "./ManageSubcription";
 import SubcriptionRider from "./SubcriptionRider";
 import SubcriptionDriver from "./SubcriptionDriver";
+import ManageAllDriver from "./ManageAllDriver";
 const Admin = () => {
   return (
     <div className="admin-cont">
@@ -27,6 +28,8 @@ const Admin = () => {
           <div className="admin-Router-child">
             <Routes>
               <Route path="/" element={<DashBoard />} />
+              <Route path="/users/drivers" element={<ManageAllDriver />} />
+
               <Route path="/pricing/add" element={<AddPricing />} />
               <Route path="/pricing/manage" element={<ManagePricing />} />
               <Route path="/cab/add" element={<AddCab />} />
