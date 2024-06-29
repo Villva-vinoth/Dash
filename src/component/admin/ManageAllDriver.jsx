@@ -72,12 +72,23 @@ const ManageAllDriver = () => {
     {
       name: "Actions",
       cell: (row) => (
-        <div onClick={() => openModel(row)} className="edit-btn center-cell"><FaEdit size={20}/></div>
+        <div onClick={() => openModel(row)} className="edit-btn center-cell">
+          <FaEdit size={20} />
+        </div>
       ),
     },
   ];
 
   const [currentId, setCurrentId] = useState("");
+
+  const [searchData, setSearchData] = useState({
+    phoneNumber: "",
+    name: "",
+    vehicleNumber: "",
+    driverId: "",
+    limit: 10,
+    page: 1,
+  });
 
   const [pricingData, setPricingData] = useState({
     vehicleType: "",
@@ -184,8 +195,10 @@ const ManageAllDriver = () => {
     const getFormData = async () => {
       const token = localStorage.getItem("Token");
       setRefresh(false);
+
+      console.log(`${GET_ALL_DRIVERS}?phone=${searchData.phoneNumber}&name=${searchData.name}&driverVehicleNumber=${searchData.vehicleNumber}&driverId=${searchData.driverId}&limit=${searchData.limit}&page=${searchData.page}`)
       await axios
-        .get(GET_ALL_DRIVERS, {
+        .get(`${GET_ALL_DRIVERS}?phone=${searchData.phoneNumber}&name=${searchData.name}&driverVehicleNumber=${searchData.vehicleNumber}&driverId=${searchData.driverId}&limit=${searchData.limit}&page=${searchData.page}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -302,22 +315,71 @@ const ManageAllDriver = () => {
     // setCurrentId('6666cb18f6a385e4bd87d205')
   };
 
+  const handleSearch = () => {
+    console.log("--->", searchData);
+    setIsRefresh(!isRefresh)
+  };
+
+  const handleChange = (e) => {
+    console.log(e.target.value);
+    if (searchData.limit <= 0) {
+      setSearchData({ ...searchData, [e.target.name]: 1 });
+    }
+    if (searchData.page <= 0) {
+      setSearchData({ ...searchData, [e.target.name]: 1 });
+    } else {
+      setSearchData({ ...searchData, [e.target.name]: e.target.value });
+    }
+  };
+
   return (
     <>
       <div className="Manage-price-container">
         <h1>Driver Details</h1>
         <div className="search-options">
-              <input placeholder="phone"/>
-              <input placeholder="Name"/>
-              <input placeholder="Vehicle Number"/>
-              <input placeholder="Driver id"/>
-              <input type="number" placeholder="limit"/>
-              <input type="number" placeholder="page"/>
-              <button>Search</button>
-            </div>
+          <input
+            placeholder="Phone Number"
+            onChange={(e) => handleChange(e)}
+            value={searchData.phoneNumber}
+            name="phoneNumber"
+          />
+          <input
+            placeholder="Name"
+            onChange={(e) => handleChange(e)}
+            value={searchData.name}
+            name="name"
+
+          />
+          <input
+            placeholder="Vehicle Number"
+            onChange={(e) => handleChange(e)}
+            value={searchData.vehicleNumber}
+            name="vehicleNumber"
+          />
+          <input
+            placeholder="Driver id"
+            onChange={(e) => handleChange(e)}
+            value={searchData.driverId}
+            name="driverId"
+          />
+          <input
+            type="number"
+            placeholder="limit"
+            onChange={(e) => handleChange(e)}
+            value={searchData.limit}
+            name="limit"
+          />
+          <input
+            type="number"
+            placeholder="page"
+            onChange={(e) => handleChange(e)}
+            value={searchData.page}
+            name="page"
+          />
+          <button onClick={() => handleSearch()}>Search</button>
+        </div>
         {refresh == true ? (
           <div>
-          
             {modalIsOpen == false ? (
               <div className="data-table-container">
                 <DataTable
