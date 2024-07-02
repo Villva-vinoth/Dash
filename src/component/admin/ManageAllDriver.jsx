@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import "./css/ManagePricing.css";
 import Modal from "react-modal";
-import { FaEdit } from "react-icons/fa";
+import { FaEdit, FaSearch } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import Lottie from "lottie-react";
 import lottieData from "../Asset/carLoader.json";
@@ -196,13 +196,18 @@ const ManageAllDriver = () => {
       const token = localStorage.getItem("Token");
       setRefresh(false);
 
-      console.log(`${GET_ALL_DRIVERS}?phone=${searchData.phoneNumber}&name=${searchData.name}&driverVehicleNumber=${searchData.vehicleNumber}&driverId=${searchData.driverId}&limit=${searchData.limit}&page=${searchData.page}`)
+      console.log(
+        `${GET_ALL_DRIVERS}?phone=${searchData.phoneNumber}&name=${searchData.name}&driverVehicleNumber=${searchData.vehicleNumber}&driverId=${searchData.driverId}&limit=${searchData.limit}&page=${searchData.page}`
+      );
       await axios
-        .get(`${GET_ALL_DRIVERS}?phone=${searchData.phoneNumber}&name=${searchData.name}&driverVehicleNumber=${searchData.vehicleNumber}&driverId=${searchData.driverId}&limit=${searchData.limit}&page=${searchData.page}`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        })
+        .get(
+          `${GET_ALL_DRIVERS}?phone=${searchData.phoneNumber}&name=${searchData.name}&driverVehicleNumber=${searchData.vehicleNumber}&driverId=${searchData.driverId}&limit=${searchData.limit}&page=${searchData.page}`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
         .then((response) => {
           console.log("res", response);
           if (response.data.data) {
@@ -317,7 +322,7 @@ const ManageAllDriver = () => {
 
   const handleSearch = () => {
     console.log("--->", searchData);
-    setIsRefresh(!isRefresh)
+    setIsRefresh(!isRefresh);
   };
 
   const handleChange = (e) => {
@@ -348,7 +353,6 @@ const ManageAllDriver = () => {
             onChange={(e) => handleChange(e)}
             value={searchData.name}
             name="name"
-
           />
           <input
             placeholder="Vehicle Number"
@@ -376,7 +380,10 @@ const ManageAllDriver = () => {
             value={searchData.page}
             name="page"
           />
-          <button onClick={() => handleSearch()}>Search</button>
+          <button onClick={() => handleSearch()} className="btn-search">
+            {" "}
+            <FaSearch /> Search
+          </button>
         </div>
         {refresh == true ? (
           <div>

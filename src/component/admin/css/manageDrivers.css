@@ -1,0 +1,39 @@
+.search-options{
+    /* background-color: red; */
+    padding: 2% 0%;
+    display: flex;
+    gap: 5px;
+}
+
+.search-options input{
+    width: 15%;
+    padding: 1%;
+
+}
+
+.search-options button{
+    padding: 1%;
+}
+
+
+.btn-search{
+    display: flex;
+    gap: 5px;
+    background-color: #ffffff;
+}
+
+.btn-search:hover{
+    background-color: #d6d4d4d5;
+    cursor: pointer;
+}
+
+.center-cell{
+    width: 50%;
+    /* margin-inline: auto; */
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
