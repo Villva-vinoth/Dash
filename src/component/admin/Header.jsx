@@ -14,7 +14,7 @@ const Header = () => {
   return (
     <div className='header'>
       <div className='logo'>
-        LOGO
+        Raider App
       </div>
       <div className='profile'>
         <CgProfile className='profile-icon' onClick={toggleProfileMenu} />

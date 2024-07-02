@@ -33,15 +33,13 @@ const NavBar = () => {
             className={activeIndex === 1 ? "Admin-navigation-cn" : ""}
           >
             <div className='menu-item'>
-             <div className='menu-select'> <FaUser />User</div>
+             <div className='menu-select'> <FaUser />Driver</div>
               {subMenuVisible[1] ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </div>
             {subMenuVisible[1] && (
               <ul className='sub-menu'>
-                <li onClick={() => nav('/admin/users/add')}>Add User</li>
-                <li onClick={() => nav('/admin/users/drivers')}>All Drivers</li>
-                <li onClick={() => nav('/admin/users/riders')}>All Riders</li>
-
+                <li onClick={() => nav('/admin/driver/add')}>Add Driver</li>
+                <li onClick={() => nav('/admin/driver/drivers')}>All Drivers</li>
               </ul>
             )}
           </li>
@@ -51,28 +49,29 @@ const NavBar = () => {
             className={activeIndex === 2 ? "Admin-navigation-cn" : ""}
           >
             <div className='menu-item'>
-             <div className='menu-select'> <IoIosPricetags />Pricing</div>
+             <div className='menu-select'> <FaUser />Rider</div>
               {subMenuVisible[2] ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </div>
             {subMenuVisible[2] && (
               <ul className='sub-menu'>
-                <li onClick={() => nav('/admin/pricing/add')}>Add Pricing</li>
-                <li onClick={() => nav('/admin/pricing/manage')}>Manage pricing</li>
+                <li onClick={() => nav('/admin/rider/add')}>Add Rider</li>
+                <li onClick={() => nav('/admin/rider/riders')}>All Riders</li>
               </ul>
             )}
           </li>
+
           <li 
             onClick={() => { toggleSubMenu(3); setActiveIndex(3); }} 
             className={activeIndex === 3 ? "Admin-navigation-cn" : ""}
           >
             <div className='menu-item'>
-             <div className='menu-select'> <FaCarAlt />cab</div>
+             <div className='menu-select'> <IoIosPricetags />Pricing</div>
               {subMenuVisible[3] ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </div>
             {subMenuVisible[3] && (
               <ul className='sub-menu'>
-                <li onClick={() => nav('/admin/cab/add')}>Add cab</li>
-                <li onClick={() => nav('/admin/cab/manage')}>Manage cab</li>
+                <li onClick={() => nav('/admin/pricing/add')}>Add Pricing</li>
+                <li onClick={() => nav('/admin/pricing/manage')}>Manage pricing</li>
               </ul>
             )}
           </li>
@@ -81,10 +80,25 @@ const NavBar = () => {
             className={activeIndex === 4 ? "Admin-navigation-cn" : ""}
           >
             <div className='menu-item'>
-             <div className='menu-select'> <FaCircleDollarToSlot />Subcription</div>
+             <div className='menu-select'> <FaCarAlt />cab</div>
               {subMenuVisible[4] ? <IoIosArrowUp /> : <IoIosArrowDown />}
             </div>
             {subMenuVisible[4] && (
+              <ul className='sub-menu'>
+                <li onClick={() => nav('/admin/cab/add')}>Add cab</li>
+                <li onClick={() => nav('/admin/cab/manage')}>Manage cab</li>
+              </ul>
+            )}
+          </li>
+          <li 
+            onClick={() => { toggleSubMenu(5); setActiveIndex(5); }} 
+            className={activeIndex === 4 ? "Admin-navigation-cn" : ""}
+          >
+            <div className='menu-item'>
+             <div className='menu-select'> <FaCircleDollarToSlot />Subcription</div>
+              {subMenuVisible[5] ? <IoIosArrowUp /> : <IoIosArrowDown />}
+            </div>
+            {subMenuVisible[5] && (
               <ul className='sub-menu'>
                 <li onClick={() => nav('/admin/subcription/driver')}>Driver</li>
                 <li onClick={() => nav('/admin/subcription/rider')}>Rider</li>

@@ -9,7 +9,7 @@ const DashBoard = () => {
         <Lottie animationData={lottieData} />
         
       </div>
-      <h1 style={{textAlign:'center'}}> Welcome to _company_name </h1>
+      <h1 style={{textAlign:'center'}}> Welcome to Raider App </h1>
     </div>
   );
 };
