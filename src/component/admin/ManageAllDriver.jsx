@@ -9,7 +9,7 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import "./css/ManagePricing.css";
+import "./css/manageDrivers.css";
 import Modal from "react-modal";
 import { FaEdit, FaSearch } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
