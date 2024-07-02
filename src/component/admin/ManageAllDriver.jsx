@@ -9,10 +9,13 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
-import "./css/manageDrivers.css";
+import "./css/ManageDrivers.css";
 import Modal from "react-modal";
-import { FaEdit, FaSearch } from "react-icons/fa";
+import { FaEdit } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { MdGridView } from "react-icons/md";
+
 import Lottie from "lottie-react";
 import lottieData from "../Asset/carLoader.json";
 const ManageAllDriver = () => {
@@ -52,10 +55,6 @@ const ManageAllDriver = () => {
       ),
     },
     {
-      name: "Duty",
-      selector: (row) => row.driverDutyType || "0",
-    },
-    {
       name: "Vehicle",
       selector: (row) => row.driverVehicleType || "0",
     },
@@ -68,12 +67,17 @@ const ManageAllDriver = () => {
       name: "Work Status",
       selector: (row) => row.driverWorkStatus || "0",
     },
+    {
+      name: "Last Updated",
+      selector: (row) => row.updatedAt.toString().split('T') || "0",
+    },
 
     {
       name: "Actions",
       cell: (row) => (
-        <div onClick={() => openModel(row)} className="edit-btn center-cell">
-          <FaEdit size={20} />
+        // openModel(row)
+        <div onClick={() => ''} className="edit-btn center-cell">
+          <MdGridView size={20} />
         </div>
       ),
     },
@@ -122,7 +126,7 @@ const ManageAllDriver = () => {
   //       pricingData.peakFare.from == "" ||
   //       pricingData.peakFare.to == ""
   //     ) {
-  //       toast.error(`Please enter all the fields !`);
+  //       toast.error(Please enter all the fields !);
   //     } else {
   //       pricingData.peakFare.from = convertToISO(pricingData.peakFare.from);
   //       pricingData.peakFare.to = convertToISO(pricingData.peakFare.to);
@@ -132,13 +136,13 @@ const ManageAllDriver = () => {
   //       try {
   //         setIsRefresh(true)
   //         const token = localStorage.getItem("Token");
-  //         // console.log('URL',`${EDIT_PRICING}/${currentId}`)
+  //         // console.log('URL',${EDIT_PRICING}/${currentId})
   //         const response = await axios.patch(
-  //           `${EDIT_PRICING}/${currentId}`,
+  //           ${EDIT_PRICING}/${currentId},
   //           pricingData,
   //           {
   //             headers: {
-  //               Authorization: `Bearer ${token}`,
+  //               Authorization: Bearer ${token},
   //             },
   //           }
   //         );
@@ -169,7 +173,7 @@ const ManageAllDriver = () => {
   //   const handleDelete = async () => {
   //     try {
   //       setIsRefresh(true)
-  //       const response = await axios.delete(`${DELETE_PRICING}/${currentId}`, {
+  //       const response = await axios.delete(${DELETE_PRICING}/${currentId}, {
   //         headers: {
   //           Authorization: `Bearer `,
   //         },
@@ -196,18 +200,12 @@ const ManageAllDriver = () => {
       const token = localStorage.getItem("Token");
       setRefresh(false);
 
-      console.log(
-        `${GET_ALL_DRIVERS}?phone=${searchData.phoneNumber}&name=${searchData.name}&driverVehicleNumber=${searchData.vehicleNumber}&driverId=${searchData.driverId}&limit=${searchData.limit}&page=${searchData.page}`
-      );
       await axios
-        .get(
-          `${GET_ALL_DRIVERS}?phone=${searchData.phoneNumber}&name=${searchData.name}&driverVehicleNumber=${searchData.vehicleNumber}&driverId=${searchData.driverId}&limit=${searchData.limit}&page=${searchData.page}`,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        )
+        .get(`${GET_ALL_DRIVERS}?phone=${searchData.phoneNumber}&name=${searchData.name}&driverVehicleNumber=${searchData.vehicleNumber}&driverId=${searchData.driverId}&limit=${searchData.limit}&page=${searchData.page}`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
         .then((response) => {
           console.log("res", response);
           if (response.data.data) {
@@ -297,10 +295,10 @@ const ManageAllDriver = () => {
       console.log("sata", d, date);
       const year = d.getFullYear();
       const month = `0${d.getMonth() + 1}`.slice(-2);
-      const day = `0${d.getDate()}`.slice(-2);
+      const day =`0${d.getDate()}`.slice(-2);
       const hours = `0${d.getHours()}`.slice(-2);
       const minutes = `0${d.getMinutes()}`.slice(-2);
-      return `${year}-${month}-${day}T${hours}:${minutes}`;
+      return `${year}-${month}-${day}T${hours}:${minutes};`
     };
 
     setPricingData({
@@ -322,7 +320,7 @@ const ManageAllDriver = () => {
 
   const handleSearch = () => {
     console.log("--->", searchData);
-    setIsRefresh(!isRefresh);
+    setIsRefresh(!isRefresh)
   };
 
   const handleChange = (e) => {
@@ -353,6 +351,7 @@ const ManageAllDriver = () => {
             onChange={(e) => handleChange(e)}
             value={searchData.name}
             name="name"
+
           />
           <input
             placeholder="Vehicle Number"
@@ -380,10 +379,7 @@ const ManageAllDriver = () => {
             value={searchData.page}
             name="page"
           />
-          <button onClick={() => handleSearch()} className="btn-search">
-            {" "}
-            <FaSearch /> Search
-          </button>
+          <button onClick={() => handleSearch()} className="btn-search"><FaSearch />Search</button>
         </div>
         {refresh == true ? (
           <div>
